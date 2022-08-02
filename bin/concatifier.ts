@@ -9,6 +9,7 @@ const path = require('path');
 
 app.version(cfg.version)
   .option('-o, --output <file>', 'output file')
+  .option('-d, --delimiter <string>', 'delimiter between files')
   .description(cfg.description)
 
 app.parse(process.argv);
@@ -21,5 +22,5 @@ let output = (o: string) => {
 };
 
 if(app.args.length) {
-  concat(app.args, app.output).then(output).catch(err)
+  concat(app.args, app.output, { delimiter: app.delimiter || ''}).then(output).catch(err)
 } else throw new Error('no files specified')

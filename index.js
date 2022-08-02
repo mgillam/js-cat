@@ -28,7 +28,7 @@ const read = (fName) => new Promise((res, rej) => {
 const concat = (options) => {
     return (files) => new Promise((res, rej) => {
         return Promise.all(files.map(read))
-            .then(src => res(src.join((options === null || options === void 0 ? void 0 : options.delimiter) || '\n')))
+            .then(src => res(src.join((options === null || options === void 0 ? void 0 : options.delimiter) || '')))
             .catch(rej);
     });
 };
