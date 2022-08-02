@@ -31,20 +31,28 @@ const read = (fName: string) => new Promise((res, rej) => {
   })
 });
 
-const concat = (files: string[]) => new Promise((res, rej) => {
-	return Promise.all(files.map(read))
-		.then(src => res(src.join('\n')))
-		.catch(rej);
-});
+const concat = (options?: { delimiter?: string }) => {
+	return  (files: string[]) => new Promise((res, rej) => {
+		return Promise.all(files.map(read))
+			.then(src => res(src.join(options?.delimiter || '\n')))
+			.catch(rej);
+	});
+}
 
-export = (folder: string[] | string, outFile?: string) => new Promise((res, rej) => {
+const defaultOptions = {
+	delimiter: ''
+};
+
+
+export = (folder: string[] | string, outFile?: string, options?: { delimiter?: string }) => new Promise((res, rej) => {
 	let concatenated;
-
+	let catOptions = Object.assign({}, defaultOptions, options || {});
+	
 	if(typeof folder === 'string') { 
 		concatenated = readFolder(folder)
-			.then(concat);
+			.then(concat(catOptions));
 	} else {
-		concatenated = concat(folder);
+		concatenated = concat(catOptions)(folder);
 	}
 
 	if (outFile) {
