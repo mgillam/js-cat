@@ -1,16 +1,16 @@
 {
-  "name": "js-cat",
+  "name": "concatifier",
   "version": "1.0.0",
   "description": "Fork of concat - concatenate multiple files",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "bin": "tsc -t ES6 --moduleResolution node ./bin/js-cat.ts --outFile ./bin/js-cat",
+    "bin": "tsc -t ES6 --moduleResolution node ./bin/concatifier.ts --outFile ./bin/concatifier",
     "build": "tsc -t ES6 --module commonjs --declaration --moduleResolution node index.ts && yarn bin",
     "prepublishOnly": "tsc -t ES6 --module commonjs --declaration --moduleResolution node index.ts && yarn bin",
     "test": "npm run build && _mocha"
   },
-  "bin": "./bin/js-cat",
+  "bin": "./bin/concatifier",
   "engines": {
     "node": ">=6"
   },
