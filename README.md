@@ -1,4 +1,5 @@
-# Concat
+# Js-Cat
+## A fork of [concat](https://github.com/gko/concat)
 
 [![Build Status](https://travis-ci.org/gko/concat.svg?branch=master)](https://travis-ci.org/gko/concat)
 
@@ -48,4 +49,4 @@ npm run test
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2017 Konstantin Gorodinskiy
+Concat is Copyright (c) 2017 Konstantin Gorodinskiy
