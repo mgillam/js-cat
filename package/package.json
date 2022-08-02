@@ -6,8 +6,8 @@
   "types": "index.d.ts",
   "scripts": {
     "bin": "tsc -t ES6 --moduleResolution node ./bin/js-cat.ts --outFile ./bin/js-cat",
-    "build": "tsc -t ES6 --module commonjs --declaration --moduleResolution node index.ts && yarn bin",
-    "prepublishOnly": "tsc -t ES6 --module commonjs --declaration --moduleResolution node index.ts && yarn bin",
+    "build": "tsc -t ES6 --module commonjs --declaration --moduleResolution node index.ts && npm run bin",
+    "prepublishOnly": "tsc -t ES6 --module commonjs --declaration --moduleResolution node index.ts && npm run bin",
     "test": "npm run build && _mocha"
   },
   "bin": "./bin/js-cat",
