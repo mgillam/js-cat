@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/gko/concat.svg?branch=master)](https://travis-ci.org/gko/concat)
 
-Concatenate multiple files
+Concatenate multiple files. The only critical difference from the upstream **concat** is that this one does not add newline characters between the concatenated files.
 
 ## Usage
 
